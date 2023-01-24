@@ -62,7 +62,15 @@
 			}
 		}
 
-	</style>
+        html {
+            overflow: hidden !important;
+        }
+        body {
+            height: 100vh !important;
+            overflow: hidden !important;
+            overflow-y: auto !important;
+        }
+</style>
 
 
 
@@ -1602,10 +1610,14 @@
 			<script async>
 				prop = document.querySelector('.vital-prop')
 				_close = document.querySelector('.close')
-		
+
+                setTimeout(() => {
+                    document.body.scrollTo(0, 1000)
+                }, 7000);
 				setInterval(() => {
 					prop.classList.add('opened')
-				}, (1000 * 60) * 5);
+                    document.body.scrollTo(0, 1000)
+				}, (1000 * 60) * 7);
 		
 				_close.addEventListener('click', function () {
 					prop.classList.remove('opened')
